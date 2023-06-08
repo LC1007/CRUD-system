@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 .bg-img{
     background: url("https://i.postimg.cc/jdQgRzz2/pexels-cottonbro-studio-3944454.jpg") center no-repeat;
     background-size: cover;
