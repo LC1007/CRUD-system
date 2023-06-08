@@ -1,11 +1,4 @@
 let featuredPosts = []
-
-// JSON.parse(localStorage.getItem('featuredPost')) 
-// ? 
-// JSON.parse(localStorage.getItem('featuredPost'))
-//  : 
-// JSON.parse(localStorage.setItem('featuredPost',JSON.stringify([])))
-
 let idNumber = featuredPosts[featuredPosts.length-1] ? featuredPosts[featuredPosts.length-1].id + 1: 1;
 let addBtn = document.querySelector('#addBtn')
 // Buttons
