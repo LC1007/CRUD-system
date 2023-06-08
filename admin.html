@@ -10,12 +10,51 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css-admin/style.css">
     <title>CRUD System</title>
   </head>
   <body>
-
     <header>
-        <a href="test.html">test</a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" style="color: white"><img src="https://i.postimg.cc/hPPRNY1j/jusu-removebg-preview.png " class="logo" alt=""></a> <br/>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a
+                    class="nav-link"
+                    href="./index.html"
+                    style="color: white; margin-left: 65rem"
+                    >Home <span class="sr-only"></span
+                  ></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./admin.html" style="color: white"
+                    >Admin</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./blogpost.html" style="color: white"
+                    >Blogpost</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+      <div class="blog">
+          <u><h1>-BLOG POSTS-</h1></u>
+      </div>
+          <div class="bg-img"></div>
     </header>
 
     <div class="container">
@@ -53,7 +92,7 @@
             <div class="modal-body">
               <form id="form">
                 <div class="mt-3">
-                  <label for="exampleFormControlInput1" class="form-label"
+                  <label for="tite-input" class="form-label"
                     >Title</label
                   >
                   <input
@@ -61,7 +100,7 @@
                     class="form-control"
                     id="tite-input"
                   />
-                  <label for="exampleFormControlInput1" class="form-label"
+                  <label for="desc-input" class="form-label"
                     >Description</label
                   >
                   <input
@@ -74,7 +113,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label"
+                  <label for="content-input" class="form-label"
                     >Content</label
                   >
                   <textarea

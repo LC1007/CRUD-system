@@ -1,5 +1,12 @@
-let featuredPosts = JSON.parse(localStorage.getItem('featuredPost')) ? JSON.parse(localStorage.getItem('featuredPost')) : []
-let idNumber = 1
+let featuredPosts = []
+
+// JSON.parse(localStorage.getItem('featuredPost')) 
+// ? 
+// JSON.parse(localStorage.getItem('featuredPost'))
+//  : 
+// JSON.parse(localStorage.setItem('featuredPost',JSON.stringify([])))
+
+let idNumber = featuredPosts[featuredPosts.length-1] ? featuredPosts[featuredPosts.length-1].id + 1: 1;
 let addBtn = document.querySelector('#addBtn')
 // Buttons
 let titleInput = document.querySelector('#tite-input')
@@ -14,19 +21,27 @@ addBtn.addEventListener('click', addData)
 
 function addData(e){
     e.preventDefault();
-    featuredPosts.push({
-        id: idNumber++,
-        title: titleInput.value,
-        description: descInput.value,
-        content: contentInput.value,
-        date: new Date(),
-        cardImg: 'https://images.pexels.com/photos/16849804/pexels-photo-16849804/free-photo-of-people-with-snowboards-and-skis-on-ski-lift.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    })
+
+    if(titleInput.value == '' && descInput.value == ''){
+      alert('Inputs are empty')
+    } else{
+      featuredPosts.push({
+          id: idNumber,
+          title: titleInput.value,
+          description: descInput.value,
+          content: contentInput.value,
+          date: new Date(),
+          cardImg: 'https://images.pexels.com/photos/16849804/pexels-photo-16849804/free-photo-of-people-with-snowboards-and-skis-on-ski-lift.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      })
+    }
+    idNumber++
     titleInput.value = ''
     descInput.value = ''
     contentInput.value = ''
     displayData()
     addStuff()
+    console.log(featuredPosts);
+    localStorage.setItem('featuredPost', JSON.stringify(featuredPosts))
 }
 
 // delBtn.addEventListener('click', del)
@@ -62,8 +77,8 @@ function displayData(){
                       </td>
                     </tr>
         `
-        localStorage.setItem('featuredPost', JSON.stringify(featuredPosts))
-    })
+      })
+      localStorage.getItem('featuredPost')
 }
 
 function addStuff(){
@@ -80,7 +95,7 @@ function addStuff(){
         </div>
       </div>
     `
-    localStorage.setItem('featuredPost', JSON.stringify(featuredPosts))
-    })
+  })
+  localStorage.getItem('featuredPost')
 }
 
